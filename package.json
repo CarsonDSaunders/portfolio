@@ -1,20 +1,14 @@
 {
-  "name": "vite-react-ts",
-  "version": "0.0.0",
-  "description": "React Typescript Starter Template with Vite",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/uchihamalolan/vite-react-ts.git"
-  },
+  "name": "carson-saunders-porfolio",
+  "version": "0.1.0",
+  "description": "Portoflio to show off Carson's Full Stack development skills",
   "keywords": [
-    "vite",
-    "react",
-    "starter",
-    "template"
+    "potfolio",
+    "hiring"
   ],
-  "author": "Malolan B. <uchihamalolan@gmail.com> (https://twitter.com/malolan12)",
+  "author": "Carson Saunders <carsonsaundersalt@gmail.com> (https://carsonsaunders.dev)",
   "license": "MIT",
-  "homepage": "https://github.com/uchihamalolan/vite-react-ts",
+  "homepage": "https://carsonsaunders.dev",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
