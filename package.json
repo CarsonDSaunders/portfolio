@@ -1,7 +1,7 @@
 {
   "name": "carson-saunders-porfolio",
-  "version": "0.1.0",
-  "description": "Portoflio to show off Carson's Full Stack development skills",
+  "version": "0.2.0",
+  "description": "Portfolio to show off Carson Saunders's Full Stack development skills",
   "keywords": [
     "potfolio",
     "hiring"
@@ -23,6 +23,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^3.1.4",
+    "use-local-storage": "^2.3.6",
     "vite-plugin-svgr": "2.4.0"
   },
   "devDependencies": {
