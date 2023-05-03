@@ -54,8 +54,8 @@ export function OL({ children }: IComponent) {
 export function LI({ children }: IComponent) {
   return <li className="mb-2">{children}</li>;
 }
-export function HR({ children }: IComponent) {
-  return <hr className="my-8" />;
+export function HR() {
+  return <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />;
 }
 export function Quote({ children }: IComponent) {
   return <blockquote className="text-gray-500 dark:text-gray-400 italic">{children}</blockquote>;

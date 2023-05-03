@@ -1,31 +1,27 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
+import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer';
+import { BLOCKS, Document, INLINES, MARKS } from '@contentful/rich-text-types';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  documentToReactComponents,
-  Options,
-  NodeRenderer,
-} from '@contentful/rich-text-react-renderer';
-import { BLOCKS, MARKS, INLINES, Document } from '@contentful/rich-text-types';
-import {
-  Bold,
-  Italic,
-  Underline,
   A,
-  Paragraph,
+  Bold,
   H1,
   H2,
   H3,
   H4,
   H5,
   H6,
-  UL,
-  OL,
-  LI,
   HR,
-  Quote,
   InlineCode,
+  Italic,
+  LI,
+  OL,
+  Paragraph,
+  Quote,
+  UL,
+  Underline,
 } from '../components/Typography';
 
 const query = `
@@ -40,7 +36,7 @@ const query = `
       description
       date
       category
-      content { json }
+      body { json }
       slug
     }
   }
@@ -59,7 +55,7 @@ interface IPost {
   thumbnail: {
     url: string;
   };
-  content: {
+  body: {
     json: Document;
   };
 }
@@ -119,16 +115,16 @@ function BlogSample({ post }: IPostProps) {
   const postDate = new Date(post.date);
   return (
     <div className="p-4 lg:w-1/3">
-      <div className="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
-        <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+      <div className="h-full bg-gray-100 bg-opacity-75 px-8 pt-10 pb-20 rounded-lg overflow-hidden text-center relative dark:bg-gray-700 dark:bg-opacity-40">
+        <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 dark:text-gray-200">
           {post.category}
         </h2>
-        <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
+        <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3 dark:text-white">
           {post.title}
         </h1>
-        <p className="leading-relaxed mb-3">{post.description}</p>
+        <p className="leading-relaxed mb-3 dark:text-gray-300">{post.description}</p>
         <Link
-          className="text-blue-500 inline-flex items-center cursor-pointer"
+          className="text-blue-500 inline-flex items-center cursor-pointer font-medium"
           to={`${post.slug}`}
           state={{ post: post }}
         >
@@ -147,8 +143,12 @@ function BlogSample({ post }: IPostProps) {
           </svg>
         </Link>
         <div className="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
-          <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-            {postDate.toLocaleDateString()}
+          <span className="text-gray-400 inline-flex items-center leading-none text-sm dark:text-gray-400 dark:border-gray-700 dark:border-opacity-50">
+            {postDate.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
           </span>
         </div>
       </div>
@@ -156,61 +156,65 @@ function BlogSample({ post }: IPostProps) {
   );
 }
 
-// const options: Options = {
-//   renderMark: {
-//     [MARKS.BOLD]: (text: React.ReactNode) => <Bold>{text}</Bold>,
-//     [MARKS.ITALIC]: (text: React.ReactNode) => <Italic>{text}</Italic>,
-//     [MARKS.UNDERLINE]: (text: React.ReactNode) => <Underline>{text}</Underline>,
-//     [MARKS.CODE]: (text: React.ReactNode) => <InlineCode>{text}</InlineCode>,
-//   },
-//   renderNode: {
-//     [BLOCKS.PARAGRAPH]: (children: React.ReactNode): NodeRenderer => (
-//       <Paragraph>{children}</Paragraph>
-//     ),
-//     [BLOCKS.HEADING_1]: (children: React.ReactNode) => <H1>{children}</H1>,
-//     [BLOCKS.HEADING_2]: (children: React.ReactNode) => <H2>{children}</H2>,
-//     [BLOCKS.HEADING_3]: (children: React.ReactNode) => <H3>{children}</H3>,
-//     [BLOCKS.HEADING_4]: (children: React.ReactNode) => <H4>{children}</H4>,
-//     [BLOCKS.HEADING_5]: (children: React.ReactNode) => <H5>{children}</H5>,
-//     [BLOCKS.HEADING_6]: (children: React.ReactNode) => <H6>{children}</H6>,
-//     [BLOCKS.UL_LIST]: (children: React.ReactNode) => <UL>{children}</UL>,
-//     [BLOCKS.OL_LIST]: (children: React.ReactNode) => <OL>{children}</OL>,
-//     [BLOCKS.LIST_ITEM]: (children: React.ReactNode) => <LI>{children}</LI>,
-//     [BLOCKS.QUOTE]: (children: React.ReactNode) => <Quote>{children}</Quote>,
-//     [BLOCKS.HR]: (children: React.ReactNode) => <HR>{children}</HR>,
-//     [INLINES.HYPERLINK]: (node: any, children: React.ReactNode) => (
-//       <A href={node.data.uri}>{children}</A>
-//     ),
-//   },
-// };
+const options: Options = {
+  renderMark: {
+    [MARKS.BOLD]: (text: React.ReactNode) => <Bold>{text}</Bold>,
+    [MARKS.ITALIC]: (text: React.ReactNode) => <Italic>{text}</Italic>,
+    [MARKS.UNDERLINE]: (text: React.ReactNode) => <Underline>{text}</Underline>,
+    [MARKS.CODE]: (text: React.ReactNode) => <InlineCode>{text}</InlineCode>,
+  },
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children: React.ReactNode) => <Paragraph>{children}</Paragraph>,
+    [BLOCKS.HEADING_1]: (node, children: React.ReactNode) => <H1>{children}</H1>,
+    [BLOCKS.HEADING_2]: (node, children: React.ReactNode) => <H2>{children}</H2>,
+    [BLOCKS.HEADING_3]: (node, children: React.ReactNode) => <H3>{children}</H3>,
+    [BLOCKS.HEADING_4]: (node, children: React.ReactNode) => <H4>{children}</H4>,
+    [BLOCKS.HEADING_5]: (node, children: React.ReactNode) => <H5>{children}</H5>,
+    [BLOCKS.HEADING_6]: (node, children: React.ReactNode) => <H6>{children}</H6>,
+    [BLOCKS.UL_LIST]: (node, children: React.ReactNode) => <UL>{children}</UL>,
+    [BLOCKS.OL_LIST]: (node, children: React.ReactNode) => <OL>{children}</OL>,
+    [BLOCKS.LIST_ITEM]: (node, children: React.ReactNode) => <LI>{children}</LI>,
+    [BLOCKS.QUOTE]: (node, children: React.ReactNode) => <Quote>{children}</Quote>,
+    [BLOCKS.HR]: () => <HR />,
+    [INLINES.HYPERLINK]: (node: any, children: React.ReactNode) => (
+      <A href={node.data.uri}>{children}</A>
+    ),
+  },
+};
 
 function Post({ post }: IPostProps) {
   const postDate = new Date(post.date);
   return (
-    <section className="text-gray-600 body-font dark:text-gray-400 ">
-      <div className="container px-5 py-24 mx-auto flex flex-col">
+    <main className="relative text-gray-600 body-font dark:text-gray-400 ">
+      <div className="container px-5 lg:py-16 mx-auto flex flex-col">
         <div className="lg:w-4/6 mx-auto">
-          <div className="rounded-lg h-64 overflow-hidden">
-            <img
-              alt="content"
-              className="object-cover object-center h-full w-full"
-              src={post.thumbnail.url}
-            />
-          </div>
-          <article className="flex mt-10">
-            <div className=" border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left text-gray-900 dark:text-white">
-              <H1>{post.title}</H1>
-              <p className="mb-6">
-                Published{' '}
+          {post.thumbnail && (
+            <div className="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="content"
+                className="object-cover object-center h-full w-full"
+                src={post.thumbnail.url}
+              />
+            </div>
+          )}
+          <div className="flex mt-10">
+            <article className=" border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-left text-gray-900 dark:text-white">
+              <h1 className="text-5xl font-extrabold mb-2">{post.title}</h1>
+              <p className="mb-6 italic">
                 <time dateTime={postDate.toLocaleDateString()}>
-                  {postDate.toLocaleDateString()}
+                  {postDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
                 </time>
               </p>
-              {documentToReactComponents(post.content.json)}
-            </div>
-          </article>
+              <HR />
+              {documentToReactComponents(post.body.json, options)}
+            </article>
+          </div>
         </div>
       </div>
-    </section>
+    </main>
   );
 }

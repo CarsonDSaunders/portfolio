@@ -2,12 +2,12 @@
 
 export function Footer() {
   return (
-    <footer className="body-font absolute inset-x-0 bottom-0">
+    <footer className="body-font absolute inset-x-0 bottom-0 bg-slate-300 bg-opacity-50 dark:bg-gray-700 ">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-        <p className="text-sm text-gray-500 dark:text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+        <p className="text-sm text-gray-500 dark:text-gray-300 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
           © 2023 Carson Saunders DEV
         </p>
-        <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start text-gray-500 dark:text-gray-400">
+        <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start text-gray-500 dark:text-gray-300">
           <a
             id="facebook"
             className="cursor-pointer hover:text-gray-200 "

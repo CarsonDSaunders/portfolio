@@ -28,7 +28,7 @@ function Root() {
   };
 
   return (
-    <div className="App h-screen dark:bg-gray-800 dark:text-gray-400 transition-colors">
+    <div className="App relative min-h-screen dark:bg-gray-800 dark:text-gray-400 transition-colors">
       <Header />
       <Toggle onClick={() => changeTheme()} theme={localStorage.theme} />
       <Outlet />
