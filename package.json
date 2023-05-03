@@ -12,6 +12,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:prod": "tsc && vite build",
     "test": "jest",
     "serve": "vite preview",
     "prepare": "husky install",

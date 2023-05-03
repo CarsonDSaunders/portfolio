@@ -6,7 +6,7 @@ frontend:
         - npm install
     build:
       commands:
-        - npm run build
+        - VITE_CONTENTFUL_DELIVERY_KEY=$CONTENTFUL_DELIVERY_KEY npm run build:prod
   artifacts:
     baseDirectory: dist
     files:

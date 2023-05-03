@@ -2,8 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
+import {
+  documentToReactComponents,
+  Options,
+  NodeRenderer,
+} from '@contentful/rich-text-react-renderer';
+import { BLOCKS, MARKS, INLINES, Document } from '@contentful/rich-text-types';
 import {
   Bold,
   Italic,
@@ -56,7 +60,7 @@ interface IPost {
     url: string;
   };
   content: {
-    json: any;
+    json: Document;
   };
 }
 
@@ -75,7 +79,7 @@ export default function Blog() {
         headers: {
           'Content-Type': 'application/json',
           // Authenticate the request
-          Authorization: 'Bearer 2YAZtROiHVlUxISi-rFc_jz0JvU9LGzJ2_SXYUqi1EM',
+          Authorization: `Bearer ${import.meta.env.VITE_CONTENTFUL_DELIVERY_KEY}`,
         },
         // send the GraphQL query
         body: JSON.stringify({ query }),
@@ -152,29 +156,33 @@ function BlogSample({ post }: IPostProps) {
   );
 }
 
-const options = {
-  renderMark: {
-    [MARKS.BOLD]: (text: any) => <Bold>{text}</Bold>,
-    [MARKS.ITALIC]: (text: any) => <Italic>{text}</Italic>,
-    [MARKS.UNDERLINE]: (text: any) => <Underline>{text}</Underline>,
-    [MARKS.CODE]: (text: any) => <InlineCode>{text}</InlineCode>,
-  },
-  renderNode: {
-    [BLOCKS.PARAGRAPH]: (children: any) => <Paragraph>{children}</Paragraph>,
-    [BLOCKS.HEADING_1]: (children: any) => <H1>{children}</H1>,
-    [BLOCKS.HEADING_2]: (children: any) => <H2>{children}</H2>,
-    [BLOCKS.HEADING_3]: (children: any) => <H3>{children}</H3>,
-    [BLOCKS.HEADING_4]: (children: any) => <H4>{children}</H4>,
-    [BLOCKS.HEADING_5]: (children: any) => <H5>{children}</H5>,
-    [BLOCKS.HEADING_6]: (children: any) => <H6>{children}</H6>,
-    [BLOCKS.UL_LIST]: (children: any) => <UL>{children}</UL>,
-    [BLOCKS.OL_LIST]: (children: any) => <OL>{children}</OL>,
-    [BLOCKS.LIST_ITEM]: (children: any) => <LI>{children}</LI>,
-    [BLOCKS.QUOTE]: (children: any) => <Quote>{children}</Quote>,
-    [BLOCKS.HR]: (children: any) => <HR>{children}</HR>,
-    [INLINES.HYPERLINK]: (node: any, children: any) => <A href={node.data.uri}>{children}</A>,
-  },
-};
+// const options: Options = {
+//   renderMark: {
+//     [MARKS.BOLD]: (text: React.ReactNode) => <Bold>{text}</Bold>,
+//     [MARKS.ITALIC]: (text: React.ReactNode) => <Italic>{text}</Italic>,
+//     [MARKS.UNDERLINE]: (text: React.ReactNode) => <Underline>{text}</Underline>,
+//     [MARKS.CODE]: (text: React.ReactNode) => <InlineCode>{text}</InlineCode>,
+//   },
+//   renderNode: {
+//     [BLOCKS.PARAGRAPH]: (children: React.ReactNode): NodeRenderer => (
+//       <Paragraph>{children}</Paragraph>
+//     ),
+//     [BLOCKS.HEADING_1]: (children: React.ReactNode) => <H1>{children}</H1>,
+//     [BLOCKS.HEADING_2]: (children: React.ReactNode) => <H2>{children}</H2>,
+//     [BLOCKS.HEADING_3]: (children: React.ReactNode) => <H3>{children}</H3>,
+//     [BLOCKS.HEADING_4]: (children: React.ReactNode) => <H4>{children}</H4>,
+//     [BLOCKS.HEADING_5]: (children: React.ReactNode) => <H5>{children}</H5>,
+//     [BLOCKS.HEADING_6]: (children: React.ReactNode) => <H6>{children}</H6>,
+//     [BLOCKS.UL_LIST]: (children: React.ReactNode) => <UL>{children}</UL>,
+//     [BLOCKS.OL_LIST]: (children: React.ReactNode) => <OL>{children}</OL>,
+//     [BLOCKS.LIST_ITEM]: (children: React.ReactNode) => <LI>{children}</LI>,
+//     [BLOCKS.QUOTE]: (children: React.ReactNode) => <Quote>{children}</Quote>,
+//     [BLOCKS.HR]: (children: React.ReactNode) => <HR>{children}</HR>,
+//     [INLINES.HYPERLINK]: (node: any, children: React.ReactNode) => (
+//       <A href={node.data.uri}>{children}</A>
+//     ),
+//   },
+// };
 
 function Post({ post }: IPostProps) {
   const postDate = new Date(post.date);
@@ -198,7 +206,7 @@ function Post({ post }: IPostProps) {
                   {postDate.toLocaleDateString()}
                 </time>
               </p>
-              {documentToReactComponents(post.content.json, options)}
+              {documentToReactComponents(post.content.json)}
             </div>
           </article>
         </div>
