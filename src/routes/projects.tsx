@@ -32,13 +32,13 @@ export default function Projects() {
             </div>
             <div className="flex-grow">
               <h2 className="text-gray-900 dark:text-white text-lg title-font font-medium mb-3">
-                Shooting Stars
+                Bigg Idea
               </h2>
               <p className="leading-relaxed text-base">
-                Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub
-                indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.
+                Social media aggregator to highlight what people are talking about and display in a
+                shareable board.
               </p>
-              <a className="mt-3 text-blue-500 inline-flex items-center">
+              <a className="mt-3 text-blue-500 inline-flex items-center cursor-pointer">
                 Learn More
                 <svg
                   fill="none"
@@ -72,13 +72,13 @@ export default function Projects() {
             </div>
             <div className="flex-grow">
               <h2 className="text-gray-900 dark:text-white text-lg title-font font-medium mb-3">
-                The Catalyzer
+                Sarcastic Tic-Tac-Toe
               </h2>
               <p className="leading-relaxed text-base">
-                Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub
-                indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.
+                Warning: not for kids. Just a fun little tic-tac-toe project that is rude and
+                demeaning.
               </p>
-              <a className="mt-3 text-blue-500 inline-flex items-center">
+              <a className="mt-3 text-blue-500 inline-flex items-center cursor-pointer">
                 Learn More
                 <svg
                   fill="none"
@@ -111,13 +111,13 @@ export default function Projects() {
             </div>
             <div className="flex-grow">
               <h2 className="text-gray-900 dark:text-white text-lg title-font font-medium mb-3">
-                Neptune
+                Southcheck
               </h2>
               <p className="leading-relaxed text-base">
-                Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub
-                indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.
+                An application that automatically checks you in for your Southwest Airlines flight
+                without having to buy their upsell. WIP.
               </p>
-              <a className="mt-3 text-blue-500 inline-flex items-center">
+              <a className="mt-3 text-blue-500 inline-flex items-center cursor-pointer">
                 Learn More
                 <svg
                   fill="none"

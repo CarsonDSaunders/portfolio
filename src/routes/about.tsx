@@ -19,21 +19,14 @@ export default function About() {
                   Carson Saunders
                 </h2>
                 <div className="w-12 h-1 bg-blue-500 rounded mt-2 mb-4"></div>
-                <p className="text-base">
-                  Raclette knausgaard hella meggs normcore williamsburg enamel pin sartorial venmo
-                  tbh hot chicken gentrify portland.
-                </p>
+                <p className="text-base">Husband, Software Engineer, Gamer</p>
               </div>
             </div>
             <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
               <p className="leading-relaxed text-lg mb-4">
-                Meggings portland fingerstache lyft, post-ironic fixie man bun banh mi umami
-                everyday carry hexagon locavore direct trade art party. Locavore small batch
-                listicle gastropub farm-to-table lumbersexual salvia messenger bag. Coloring book
-                flannel truffaut craft beer drinking vinegar sartorial, disrupt fashion axe normcore
-                meh butcher. Portland 90&apos;s scenester vexillologist forage post-ironic
-                asymmetrical, chartreuse disrupt butcher paleo intelligentsia pabst before they sold
-                out four loko. 3 wolf moon brooklyn.
+                {
+                  "My name's Carson. I'm from Utah, and I'm a software engineer. I'm currently working at Ancestry.com, and I'm loving it. I'm married to my beautiful wife, Danielle. I love to play video games, and I'm a huge fan of the Legend of Zelda series. I also love to watch sports (my favorites are American Football and the NBA). I'm a huge nerd, and I love to learn new things. I'm always looking for new opportunities to grow and learn."
+                }
               </p>
             </div>
           </div>

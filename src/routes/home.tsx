@@ -1,3 +1,6 @@
+import HomeImg from 'assets/home-img.jpg';
+import { Link } from 'react-router-dom';
+
 export default function Home() {
   return (
     <section className="text-gray-600 dark:text-gray-400 body-font">
@@ -8,25 +11,23 @@ export default function Home() {
             Welcome to my site.
           </h1>
           <p className="mb-8 leading-relaxed">
-            Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed
-            tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken
-            authentic tumeric truffaut hexagon try-hard chambray.
+            I&apos;m glad you could make it. This is my space for all of my career-related stuff.
+            Feel free to look through to get an idea of what I do. Enjoy!
           </p>
           <div className="flex justify-center">
-            <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">
+            <Link
+              className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg cursor-pointer"
+              to="/contact"
+            >
+              Contact Me
+            </Link>
+            {/* <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
               Button
-            </button>
-            <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
-              Button
-            </button>
+            </button> */}
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-          <img
-            className="object-cover object-center rounded"
-            alt="hero"
-            src="https://dummyimage.com/720x600"
-          />
+          <img className="object-cover object-center rounded" alt="hero" src={HomeImg} />
         </div>
       </div>
     </section>

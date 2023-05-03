@@ -1,0 +1,15 @@
+query postCollectionQuery {
+  postCollection {
+    items {
+      sys {
+        id
+      }
+      title
+      description
+      date
+      content {
+        json
+      }
+    }
+  }
+}
