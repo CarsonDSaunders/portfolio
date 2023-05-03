@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import svgrPlugin from 'vite-plugin-svgr';
-import Markdown from '@pity/vite-plugin-react-markdown';
 
 // https://vitejs.dev/config/
 // eslint-disable-next-line import/no-unused-modules

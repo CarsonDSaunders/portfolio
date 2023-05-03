@@ -25,9 +25,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^3.1.4",
-    "react-markdown": "^8.0.6",
     "react-router-dom": "^6.9.0",
-    "remark-frontmatter": "^4.0.1",
     "use-local-storage": "^2.3.6",
     "vite-plugin-svgr": "2.4.0"
   },
@@ -36,7 +34,6 @@
     "@commitlint/cli": "^17.4.0",
     "@commitlint/config-conventional": "^17.4.0",
     "@commitlint/prompt-cli": "^17.4.0",
-    "@pity/vite-plugin-react-markdown": "^0.1.1",
     "@testing-library/dom": "^8.19.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -71,7 +68,6 @@
     "ts-jest": "29.0.3",
     "typescript": "^4.9.4",
     "vite": "^4.0.4",
-    "vite-plugin-markdown": "^2.1.0",
     "vite-tsconfig-paths": "^4.0.3"
   }
 }
