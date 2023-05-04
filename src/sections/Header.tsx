@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { NavLink } from 'react-router-dom';
 import 'styles/active.css';
-import { ReactComponent as NarrowLogo } from 'assets/narrow-logo.svg';
 import { ReactComponent as Logo } from 'assets/site-logo.svg';
 
 export function Header() {
