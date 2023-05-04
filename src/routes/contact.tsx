@@ -2,71 +2,52 @@
 
 export default function Contact() {
   return (
-    <section className="body-font relative">
-      <div className="container px-5 py-24 mx-auto">
+    <section className="body-font  sm:min-h-screen">
+      <div className="container px-5 py-16 mx-auto ">
         <div className="flex flex-col text-center w-full mb-12">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 dark:text-white">
             Contact Me
           </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Want to get in touch? Leave a message below.
-          </p>
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Want to get in touch?</p>
         </div>
-        <div className="lg:w-1/2 md:w-2/3 mx-auto">
-          <div className="flex flex-wrap -m-2">
-            <div className="p-2 w-1/2">
-              <div className="relative">
-                <label
-                  htmlFor="name"
-                  className="leading-7 text-sm text-gray-600 dark:text-gray-300"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 dark:bg-gray-600 dark:bg-opacity-40  dark:border-gray-400 dark:focus:border-blue-500 dark:focus:bg-gray-900 dark:focus:ring-2 dark:focus:ring-blue-900 dark:text-gray-100 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                />
-              </div>
-            </div>
-            <div className="p-2 w-1/2">
-              <div className="relative">
-                <label
-                  htmlFor="email"
-                  className="leading-7 text-sm text-gray-600 dark:text-gray-300"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 dark:bg-gray-600 dark:bg-opacity-40  dark:border-gray-400 dark:focus:border-blue-500 dark:focus:bg-gray-900 dark:focus:ring-2 dark:focus:ring-blue-900 dark:text-gray-100 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                />
-              </div>
-            </div>
-            <div className="p-2 w-full">
-              <div className="relative">
-                <label
-                  htmlFor="message"
-                  className="leading-7 text-sm text-gray-600 dark:text-gray-300"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 dark:bg-gray-600 dark:bg-opacity-40  dark:border-gray-400 dark:focus:border-blue-500 dark:focus:bg-gray-900 dark:focus:ring-2 dark:focus:ring-blue-900 dark:text-gray-100 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                ></textarea>
-              </div>
-            </div>
-            <div className="p-2 w-full">
-              <button className="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
-                Button
-              </button>
-            </div>
+        <div className="p-2 w-full">
+          <a
+            className="flex w-fit mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg cursor-pointer"
+            target={'_blank'}
+            rel="noreferrer"
+            href="mailto:carsonsaundersalt@gmail.com"
+          >
+            Send me an email
+          </a>
+          <div className="inline-flex items-center justify-center w-full">
+            <hr className="w-64 h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+            <span className="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-white dark:bg-gray-800">
+              or
+            </span>
           </div>
+          <a
+            className="flex w-fit mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg cursor-pointer"
+            target={'_blank'}
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/carson-saunders-649a1a1b2/"
+          >
+            <svg
+              fill="currentColor"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              className="w-5 h-5 mr-2 mt-0.5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="none"
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+              ></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+            Connect with me on LinkedIn
+          </a>
         </div>
       </div>
     </section>
