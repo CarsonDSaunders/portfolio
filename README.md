@@ -3,7 +3,7 @@
 ### Things in CRA, supported here:
 
 - Import SVG's directly as React Component via SVGR
-- Unit Testing via Jest & React Testing Library
+- Unit Testing via Vitest & React Testing Library
 - ESLint Rules & Prettier
 - Tailwind
 - Absolute imports within `src` directory
@@ -54,7 +54,7 @@ degit uchihamalolan/vite-react-ts your-app-name
 
 ### Testing
 
-- Jest + React Testing Library (plus some plugins)
+- Vitest + React Testing Library (plus some plugins)
 
 ---
 
@@ -109,5 +109,4 @@ degit uchihamalolan/vite-react-ts your-app-name
 - RTKQuery
 
 <!-- ### Eslint Plugins
-- [eslint-plugin-jest-dom](https://testing-library.com/docs/ecosystem-eslint-plugin-jest-dom)
 - [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin) -->

@@ -38,8 +38,11 @@ export default function Projects() {
                 Social media aggregator to highlight what people are talking about and display in a
                 shareable board.
               </p>
-              <a className="mt-3 text-blue-500 inline-flex items-center cursor-pointer">
-                Learn More
+              <a
+                className="mt-3 text-blue-500 inline-flex items-center cursor-pointer"
+                href="https://github.com/CarsonDSaunders/BiggIdea"
+              >
+                Github Repo
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -117,8 +120,11 @@ export default function Projects() {
                 An application that automatically checks you in for your Southwest Airlines flight
                 without having to buy their upsell. WIP.
               </p>
-              <a className="mt-3 text-blue-500 inline-flex items-center cursor-pointer">
-                Learn More
+              <a
+                className="mt-3 text-blue-500 inline-flex items-center cursor-pointer"
+                href="https://github.com/CarsonDSaunders/Southcheck-frontend"
+              >
+                Github Repo
                 <svg
                   fill="none"
                   stroke="currentColor"

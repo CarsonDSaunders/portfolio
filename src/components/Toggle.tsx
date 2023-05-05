@@ -11,6 +11,8 @@ function Toggle({ onClick, theme }: ToggleProps) {
     <button
       className="bg-none border-none absolute top-3 right-3 text-gray-600 dark:text-gray-400"
       onClick={onClick}
+      data-testid="toggle"
+      data-theme={theme}
     >
       {theme === 'dark' ? <Dark height={25} width={25} /> : <Light height={25} width={25} />}
     </button>

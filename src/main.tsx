@@ -36,6 +36,10 @@ const router = createBrowserRouter(
 
 const container = document.getElementById('root');
 if (container) {
+  container.dataset.testid = 'root';
+}
+
+if (container) {
   const root = createRoot(container);
   root.render(
     <StrictMode>
