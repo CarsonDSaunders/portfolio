@@ -1,0 +1,206 @@
+
+header {
+    text-align: center;
+    margin-top: 2.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+button {
+    font-family: Arial;
+    color: #3498db;
+    font-size: 20px;
+    border: 1px solid #3498db;
+    background: white;
+    padding: 10px 12px 10px 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.reset:hover,
+.save-changes:hover {
+    color: #2d658b;
+    background: #3498db;
+    transition: all 0.25s;
+}
+
+.board {
+    height: 500px;
+    width: 500px;
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: 1px solid #a1a1a1;
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.17);
+}
+
+.square {
+    border: 1px solid #a1a1a1;
+    cursor: pointer;
+    transition: all 0.25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    color: black;
+}
+
+.square:hover {
+    background-color: #a0a0a0;
+    transition: all 0.25s;
+}
+
+.square.used {
+    cursor: default;
+}
+
+.square.used:hover {
+    background-color: #ffffff;
+    transition: all 0.25s;
+}
+
+.square.win,
+.square.win:hover {
+    background-color: #696969;
+    color: #ffffff;
+    cursor: default;
+}
+
+.square.over {
+    cursor: default;
+    background-color: #ffffff;
+}
+
+.info {
+    width: 50vw;
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.alert {
+    border-radius: 1em;
+    border: 3px solid #a1a1a1;
+    transition: all 0.25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1000;
+    top: -15vh;
+    height: 5vh;
+    width: 30vw;
+    background: #ffff;
+}
+
+.alert.active {
+    color: #4d4d4d;
+    transition: all 0.25s;
+    top: 5vh;
+}
+
+.alert.win {
+    border: 3px solid #24ab47;
+}
+.alert.invalid {
+    border: 3px solid #d92631;
+}
+.alert.reset,
+.alert.cat {
+    border: 3px solid #fae543;
+}
+
+.settings-button {
+    font-size: 4em;
+    color: #3498db;
+    position: absolute;
+    z-index: 999;
+    top: 5px;
+    right: 20px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.settings-button.open {
+    transform: rotate(-90deg);
+    transition: all 0.25s;
+}
+
+.settings {
+    position: absolute;
+    width: 40vw;
+    height: clamp(30vh, 50vh, 80vh);
+    z-index: 1001;
+    border: #3498db 3px solid;
+    background: white;
+    font-size: 1.5em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.17);
+}
+
+.settings-inner {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.save-changes {
+    color: #ffffff;
+    background: #3498db;
+    transition: all 0.25s;
+}
+
+.reset-score {
+    color: white;
+    background-color: #f3515c;
+    border-color: #f3515c;
+    font-size: 16px;
+}
+
+.rename {
+    font-family: Arial;
+    color: #4d4d4d;
+    font-size: 20px;
+    border: 1px solid #4d4d4d;
+    background: white;
+    padding: 10px 12px 10px 12px;
+}
+
+.setting {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.setting.autoReset {
+    font-size: 17px;
+}
+
+.option {
+    font-family: Arial;
+    color: #4d4d4d;
+    border: 1px solid #4d4d4d;
+    background: white;
+}

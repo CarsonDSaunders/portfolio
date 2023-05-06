@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { NavLink } from 'react-router-dom';
 
 export default function Projects() {
   return (
     <section className="body-font">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 py-10 md:py-24 mx-auto">
         <div className="text-center mb-20">
           <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 dark:text-white mb-4">
             My Work
@@ -81,7 +82,10 @@ export default function Projects() {
                 Warning: not for kids. Just a fun little tic-tac-toe project that is rude and
                 demeaning.
               </p>
-              <a className="mt-3 text-blue-500 inline-flex items-center cursor-pointer">
+              <NavLink
+                className="mt-3 text-blue-500 inline-flex items-center cursor-pointer"
+                to="tic-tac-toe"
+              >
                 Learn More
                 <svg
                   fill="none"
@@ -94,7 +98,7 @@ export default function Projects() {
                 >
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
-              </a>
+              </NavLink>
             </div>
           </div>
           <div className="p-4 md:w-1/3 flex flex-col text-center items-center">

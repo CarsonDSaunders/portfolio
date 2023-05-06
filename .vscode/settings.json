@@ -3,6 +3,5 @@
   "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.formatOnSave": true,
   "prettier.documentSelectors": ["*.{tsx,ts}", "*.{jsx,js}"],
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "testing.automaticallyOpenPeekView": "never"
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

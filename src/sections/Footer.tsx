@@ -2,7 +2,7 @@
 
 export function Footer() {
   return (
-    <footer className="body-font absolute inset-x-0 bottom-0 bg-slate-300 bg-opacity-50 dark:bg-gray-700 ">
+    <footer className="body-font md:absolute md:inset-x-0 md:bottom-0 bg-slate-300 bg-opacity-50 dark:bg-gray-700 ">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
         <p className="text-sm text-gray-500 dark:text-gray-300 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
           © 2023 Carson Saunders DEV
@@ -10,7 +10,7 @@ export function Footer() {
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start text-gray-500 dark:text-gray-300">
           <a
             id="facebook"
-            className="cursor-pointer hover:text-gray-200 "
+            className="cursor-pointer hover:text-gray-700 dark:hover:text-gray-200 "
             target={'_blank'}
             rel="noreferrer"
             href="https://www.facebook.com/carson.saunders.50/"
@@ -28,7 +28,7 @@ export function Footer() {
           </a>
           <a
             id="twitter"
-            className="ml-3 cursor-pointer hover:text-gray-200 "
+            className="ml-3 cursor-pointer hover:text-gray-700 dark:hover:text-gray-200 "
             target={'_blank'}
             rel="noreferrer"
             href="https://twitter.com/csonsaunders"
@@ -46,7 +46,7 @@ export function Footer() {
           </a>
           <a
             id="instagram"
-            className="ml-3 cursor-pointer hover:text-gray-200 "
+            className="ml-3 cursor-pointer hover:text-gray-700 dark:hover:text-gray-200 "
             target={'_blank'}
             rel="noreferrer"
             href="https://www.instagram.com/carsondsaunders/"
@@ -66,7 +66,7 @@ export function Footer() {
           </a>
           <a
             id="linkedin"
-            className="ml-3 cursor-pointer hover:text-gray-200 "
+            className="ml-3 cursor-pointer hover:text-gray-700 dark:hover:text-gray-200 "
             target={'_blank'}
             rel="noreferrer"
             href="https://www.linkedin.com/in/carson-saunders-649a1a1b2/"

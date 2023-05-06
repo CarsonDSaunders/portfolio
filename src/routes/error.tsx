@@ -12,7 +12,7 @@ export default function ErrorPage() {
 
   return (
     <section className="text-gray-600 dark:bg-gray-800 dark:text-gray-400 body-font h-screen  ">
-      <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col ">
+      <div className="container mx-auto flex px-5 py-10 md:py-24 items-center justify-center flex-col ">
         <Error height={300} width={300} className="text-blue-500" />
 
         <div className="text-center lg:w-2/3 w-full">

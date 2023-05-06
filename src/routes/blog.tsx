@@ -97,7 +97,7 @@ export default function Blog() {
   if (!state) {
     return (
       <section className="text-gray-600 body-font relative sm:min-h-screen">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container py-10 md:py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
             {posts.map((post) => {
               return <BlogSample key={post.sys.id} post={post} />;

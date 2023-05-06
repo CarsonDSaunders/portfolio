@@ -5,7 +5,7 @@ import { ReactComponent as Logo } from 'assets/site-logo.svg';
 
 export function Header() {
   return (
-    <header className="text-gray-600 body-font dark:text-gray-400 ">
+    <header className="text-gray-600 body-font dark:text-gray-400 border-solid border-0 border-b border-slate-900/10 dark:border-slate-300/10">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a
           className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 cursor-pointer dark:text-white"

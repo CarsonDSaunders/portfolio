@@ -39,9 +39,9 @@ function Root() {
   };
 
   return (
-    <div className="App relative min-h-screen dark:bg-gray-800 dark:text-gray-400 transition-colors">
-      <Header />
+    <div className="App relative min-h-screen dark:bg-gray-800 dark:text-gray-400 transition-colors flex flex-col">
       <Toggle onClick={() => changeTheme()} theme={theme} />
+      <Header />
       <Outlet />
       <Footer />
     </div>

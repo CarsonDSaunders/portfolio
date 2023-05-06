@@ -3,7 +3,7 @@
 export default function Dev() {
   return (
     <section className="body-font relative">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container py-10 md:py-24 mx-auto">
         <div className="text-left w-full mb-12 block text-gray-900 dark:text-white">
           <h1 className="text-5xl font-extrabold mb-8">Heading 1</h1>
           <h2 className="text-4xl font-bold mb-8">Heading 2</h2>
