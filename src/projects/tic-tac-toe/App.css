@@ -1,11 +1,6 @@
-
 h1 {
   font-size: 48px;
 }
-
-
-
-
 
 .used {
   cursor: default;
@@ -72,7 +67,6 @@ h1 {
 .alert.cat {
   border: 3px solid #fae543;
 }
-
 
 .settings {
   position: absolute;
