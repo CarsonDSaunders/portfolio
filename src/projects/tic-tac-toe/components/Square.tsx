@@ -23,9 +23,9 @@ function Square({ squareStatus, winCombo, takeTurn, position }: ISquareProps) {
   };
   return (
     <div
-      className={`square ${status !== 0 ? 'used' : ''} ${
-        winCombo.length !== 0 ? (winCombo.includes(position) ? 'win' : 'over') : ''
-      }`}
+      className={`flex cursor-pointer justify-center items-center text-6xl text-gray-800 dark:text-white border border-solid border-gray-600 dark:border-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all ${
+        status !== 0 ? 'used' : ''
+      } ${winCombo.length !== 0 ? (winCombo.includes(position) ? 'win' : 'over') : ''}`}
       onClick={() => takeTurn(position)}
     >
       {displaySquare()}

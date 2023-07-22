@@ -12,10 +12,10 @@ export default function TicTacToe() {
   const [currentTurn, setCurrentTurn] = useState(1);
   const [alert, setAlert] = useState('');
   const [gameState, setGameState] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
-  const [winCombo, setWinCombo] = useState([]);
+  const [winCombo, setWinCombo] = useState<Array<number>>([]);
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [p1Name, setP1Name] = useState('Exs');
-  const [p2Name, setP2Name] = useState('Hoes');
+  const [p1Name, setP1Name] = useState("X's");
+  const [p2Name, setP2Name] = useState("O's");
   const [autoReset, setAutoReset] = useState(true);
   const [settings, setSettings] = useState({
     winCount1: 0,
@@ -26,8 +26,9 @@ export default function TicTacToe() {
   });
 
   useEffect(() => {
-    if (typeof window.localStorage.getItem('settings') === 'string') {
-      setSettings(JSON.parse(window.localStorage.getItem('settings')));
+    const localSettings = window.localStorage.getItem('settings');
+    if (typeof localSettings === 'string') {
+      setSettings(JSON.parse(localSettings));
     } else {
       window.localStorage.setItem('settings', JSON.stringify(settings));
     }
@@ -45,11 +46,10 @@ export default function TicTacToe() {
       handleAlert('cat');
     } else {
       handleAlert('win');
-      if (window.localStorage.getItem(`winCount${currentTurn}`)) {
-        window.localStorage.setItem(
-          `winCount${currentTurn}`,
-          String(window.localStorage.getItem(`winCount${currentTurn}`) + 1)
-        );
+
+      const localWinCount = window.localStorage.getItem(`winCount${currentTurn}`);
+      if (localWinCount) {
+        window.localStorage.setItem(`winCount${currentTurn}`, String(localWinCount + 1));
       }
     }
 
@@ -62,7 +62,7 @@ export default function TicTacToe() {
     return;
   };
 
-  const editBoard = (i) => {
+  const editBoard = (i: number) => {
     if (winCombo.length === 0) {
       let endGame = false;
       if (gameState[i] !== 0) {
@@ -74,12 +74,12 @@ export default function TicTacToe() {
       setGameState(newGameState);
       endGame = checkForEnd(newGameState);
       if (endGame) {
-        handleGameEnd(currentTurn);
+        handleGameEnd(String(currentTurn));
       } else {
         setCurrentTurn(currentTurn === 1 ? 2 : 1);
       }
     }
-    return;
+    return true;
   };
 
   const takeTurn = (position: number) => {
@@ -136,6 +136,10 @@ export default function TicTacToe() {
     setSettingsOpen(!settingsOpen);
     return;
   };
+  const handleClickInfo = () => {
+    setSettingsOpen(!settingsOpen);
+    return;
+  };
 
   const saveSettingsChanges = (p1: string, p2: string, ar: boolean) => {
     setSettings({ ...settings, p1Name: p1, p2Name: p2, autoReset: ar });
@@ -151,10 +155,16 @@ export default function TicTacToe() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <main className="flex flex-col justify-center items-center relative text-gray-600 dark:text-gray-400">
       {alert !== '' && <Alert alertType={alert} data={[currentTurn]} />}
       <span
-        className={`settings-button ${settingsOpen ? 'open' : ''}`}
+        className={`absolute z-50 top-2 left-5 cursor-pointer text-4xl`}
+        onClick={() => handleClickInfo()}
+      >
+        &#9432;
+      </span>
+      <span
+        className={`absolute z-50 top-1.5 right-5 cursor-pointer text-6xl`}
         onClick={() => handleClickGear()}
       >
         &#9881;
@@ -171,7 +181,7 @@ export default function TicTacToe() {
         <></>
       )}
       <Header resetBoard={resetBoard} />
-      <div className="board grid">
+      <div className="grid grid-cols-3 grid-rows-3 h-72 w-72 sm:h-[500px] sm:w-[500px] border border-solid border-gray-500 dark:border-white mt-8 shadow-md">
         <Square position={0} squareStatus={gameState} takeTurn={takeTurn} winCombo={winCombo} />
         <Square position={1} squareStatus={gameState} takeTurn={takeTurn} winCombo={winCombo} />
         <Square position={2} squareStatus={gameState} takeTurn={takeTurn} winCombo={winCombo} />
@@ -183,6 +193,6 @@ export default function TicTacToe() {
         <Square position={8} squareStatus={gameState} takeTurn={takeTurn} winCombo={winCombo} />
       </div>
       <Info p1Name={settings.p1Name} p2Name={settings.p2Name} currentTurn={currentTurn} />
-    </div>
+    </main>
   );
 }

@@ -2,6 +2,8 @@
 import { NavLink } from 'react-router-dom';
 
 export default function Projects() {
+  const showTicTacToe = false;
+
   return (
     <section className="body-font">
       <div className="container px-5 py-10 md:py-24 mx-auto">
@@ -76,29 +78,48 @@ export default function Projects() {
             </div>
             <div className="flex-grow">
               <h2 className="text-gray-900 dark:text-white text-lg title-font font-medium mb-3">
-                Sarcastic Tic-Tac-Toe
+                Rando-Tac-Toe
               </h2>
               <p className="leading-relaxed text-base">
-                Warning: not for kids. Just a fun little tic-tac-toe project that is rude and
-                demeaning.
+                Classic tic-tac-toe with a twist: once a game, two random squares will swap places.
               </p>
-              <NavLink
-                className="mt-3 text-blue-500 inline-flex items-center cursor-pointer"
-                to="tic-tac-toe"
-              >
-                Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
+              {showTicTacToe ? (
+                <NavLink
+                  className="mt-3 text-blue-500 inline-flex items-center cursor-pointer"
+                  to="tic-tac-toe"
                 >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </NavLink>
+                  Check it out
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    className="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </NavLink>
+              ) : (
+                <a
+                  className="mt-3 text-blue-500 inline-flex items-center cursor-pointer"
+                  href="https://github.com/CarsonDSaunders/portfolio/tree/main/src/projects/tic-tac-toe"
+                >
+                  Github
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    className="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              )}
             </div>
           </div>
           <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
@@ -122,7 +143,7 @@ export default function Projects() {
               </h2>
               <p className="leading-relaxed text-base">
                 An application that automatically checks you in for your Southwest Airlines flight
-                without having to buy their upsell. WIP.
+                without having to buy their auto-check-in upsell. WIP.
               </p>
               <a
                 className="mt-3 text-blue-500 inline-flex items-center cursor-pointer"
@@ -144,9 +165,9 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <button className="flex mx-auto mt-16 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
+        {/* <button className="flex mx-auto mt-16 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">
           Surprise Me
-        </button>
+        </button> */}
       </div>
     </section>
   );

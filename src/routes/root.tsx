@@ -39,10 +39,16 @@ function Root() {
   };
 
   return (
-    <div className="App relative min-h-screen dark:bg-gray-800 dark:text-gray-400 transition-colors flex flex-col">
+    <div
+      id="page-container"
+      className="App relative min-h-full sm:min-h-screen dark:bg-gray-900 dark:text-gray-400 transition-colors flex flex-col"
+    >
       <Toggle onClick={() => changeTheme()} theme={theme} />
       <Header />
-      <Outlet />
+      <main className="pb-[100px]">
+        <Outlet />
+      </main>
+
       <Footer />
     </div>
   );

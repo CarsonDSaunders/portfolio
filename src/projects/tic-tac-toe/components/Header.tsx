@@ -2,71 +2,24 @@ import React, { useState } from 'react';
 
 type resetBoard = () => void;
 interface IHeaderProps {
-  alertType: string;
-  data: any;
   resetBoard: resetBoard;
 }
 
-export default function Header({ alertType, data, resetBoard }: IHeaderProps) {
+export default function Header({ resetBoard }: IHeaderProps) {
   const [timer, setTimer] = useState<NodeJS.Timeout | undefined>(undefined);
   const [progInterval, setProgInterval] = useState<NodeJS.Timeout | undefined>(undefined);
   const [progress, setProgress] = useState(0);
 
-  const buttonStyle = {
-    background: timer
-      ? `linear-gradient(to right, #3498db 0%, #3498db ${progress}%, #FFFFFF ${progress}%, #FFFFFF 100%)`
-      : 'white',
-    color: timer ? '#a0a0a0' : '',
-  };
-
-  const startProgress = () => {
-    console.log('reset pressed');
-    const currTimer = setTimeout(() => {
-      resetBoard();
-    }, 1000);
-    progInt();
-    setTimer(currTimer);
-  };
-  const stopProgress = () => {
-    console.log('reset lifted');
-    // console.log(progress);
-    clearTimeout(timer);
-    clearInterval(progInterval);
-    setTimer(undefined);
-    setProgress(0);
-  };
-
-  const progInt = () => {
-    let prog = 0;
-    const currProgInterval = setInterval(() => {
-      if (prog <= 100) {
-        prog += 1;
-        returnProg(prog);
-      } else {
-        clearInterval(currProgInterval);
-      }
-    }, 10);
-    setProgInterval(currProgInterval);
-  };
-
-  const returnProg = (prog: number) => {
-    setProgress(prog);
-    return progress;
-  };
-
   return (
     <>
-      <header className="text-center flex flex-col justify-center items-center">
-        <button
-          style={buttonStyle}
-          className="reset text-blue-500 text-xl bg-white no-underline cursor-pointer hover:text-blue-800 hover:bg-blue-500 transition-all"
-          onPointerDown={(e) => startProgress()}
-          onPointerUp={(e) => stopProgress()}
-        >
-          {' '}
+      <div className="text-center flex flex-col justify-center items-center mt-10">
+        <h2 className="text-4xl mt-5 sm:mt-2 sm:text-6xl text-gray-800 dark:text-white bold mb-4">
+          Rando-Tac-Toe
+        </h2>
+        <button className=" bg-red-500 hover:bg-red-700  py-1 px-2 rounded text-white text-xl  no-underline cursor-pointer transition-all">
           Reset Game
         </button>
-      </header>
+      </div>
     </>
   );
 }

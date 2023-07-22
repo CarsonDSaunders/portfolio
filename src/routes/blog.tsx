@@ -115,7 +115,7 @@ function BlogSample({ post }: IPostProps) {
   const postDate = new Date(post.date);
   return (
     <div className="p-4 lg:w-1/3">
-      <div className="h-full bg-gray-100 bg-opacity-75 px-8 pt-10 pb-20 rounded-lg overflow-hidden text-center relative dark:bg-gray-700 dark:bg-opacity-40">
+      <div className="h-full bg-gray-100 bg-opacity-75 px-8 pt-10 pb-20 rounded-lg overflow-hidden text-center relative dark:bg-gray-800 dark:bg-opacity-40">
         <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 dark:text-gray-200">
           {post.category}
         </h2>
@@ -185,7 +185,7 @@ const options: Options = {
 function Post({ post }: IPostProps) {
   const postDate = new Date(post.date);
   return (
-    <main className="relative text-gray-600 body-font dark:text-gray-400 ">
+    <section className="relative text-gray-600 body-font dark:text-gray-400 ">
       <div className="container px-5 lg:py-16 mx-auto flex flex-col">
         <div className="lg:w-4/6 mx-auto">
           {post.thumbnail && (
@@ -215,6 +215,6 @@ function Post({ post }: IPostProps) {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

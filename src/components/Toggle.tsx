@@ -9,7 +9,7 @@ interface ToggleProps {
 function Toggle({ onClick, theme }: ToggleProps) {
   return (
     <button
-      className="bg-none border-none absolute top-3 right-3 text-gray-600 dark:text-gray-400"
+      className="bg-none border-none absolute top-3 right-3 text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
       onClick={onClick}
       data-testid="toggle"
       data-theme={theme}
