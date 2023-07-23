@@ -14,6 +14,7 @@
     "build": "tsc && vite build",
     "build:prod": "tsc && vite build",
     "test": "vitest",
+    "test:ui": "vitest --ui",
     "serve": "vite preview",
     "prepare": "husky install",
     "commit": "commit",

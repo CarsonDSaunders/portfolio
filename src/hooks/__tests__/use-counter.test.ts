@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import useCounter from '../use-counter';
+import { test, expect } from 'vitest';
 
 test('should use counter', () => {
   const { result } = renderHook(() => useCounter());
